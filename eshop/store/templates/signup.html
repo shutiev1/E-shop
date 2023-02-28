@@ -1,0 +1,87 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="p-4 m-4">
+    <div class="col-lg-5 mx-auto border rounded bg-secondary text-white">
+      <h3
+        class="alert alert-light border rounded text-center bg-secondary text-white"
+      >
+        Create An Acount
+      </h3>
+      <form action="/signup" method="POST" class="p-3 pt-2">
+        {% csrf_token %} {% if error %}
+        <div class="alert alert-danger" role="alert">{{error}}</div>
+        {% endif %}
+        <!--FIRST_NAME-->
+        <div class="form-group">
+          <label for="">First Name</label>
+          <input
+            type="text"
+            name="firstname"
+            id=""
+            value="{{values.first_name}}"
+            class="form-control form-control-sm"
+            placeholder="Ivan"
+          />
+        </div>
+        <!--LAST_NAME-->
+        <div class="form-group pt-2">
+          <label for="">Last Name</label>
+          <input
+            type="text"
+            name="lastname"
+            id=""
+            value="{{values.last_name}}"
+            class="form-control form-control-sm"
+            placeholder="Ivanov"
+          />
+        </div>
+        <!--PHONE-->
+        <div class="form-group pt-2">
+          <label for="">Phone</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            value="{{values.phone}}"
+            class="form-control form-control-sm"
+            placeholder="+375 25 690 5114"
+          />
+        </div>
+        <!--EMAIL-->
+        <div class="form-group pt-2">
+          <label for="">Email</label>
+          <input
+            required
+            type="email"
+            name="email"
+            id=""
+            value="{{values.first_name}}"
+            class="form-control form-control-sm"
+            placeholder="example@gmail.com"
+          />
+        </div>
+
+        <!--PASSWORD-->
+        <div class="form-group pt-2">
+          <label for="">Password</label>
+          <input
+            type="password"
+            name="password"
+            id=""
+            class="form-control form-control-sm"
+            placeholder="********"
+          />
+        </div>
+
+        <div class="form-group pt-3">
+          <input
+            class="btn btn-sm btn-info"
+            type="submit"
+            value="Creat an Acount"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
