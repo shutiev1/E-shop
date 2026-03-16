@@ -22,7 +22,7 @@ class Login(View):
                 request.session['customer'] = customer.id
 
                 if Login.return_url:
-                    return HttpResponseRedirect('Login.return_url')
+                    return HttpResponseRedirect(Login.return_url)
                 else:
                     Login.return_url = None
                     return redirect('homepage')

@@ -3,7 +3,6 @@ from store.models.product import Product
 from store.models.category import Category
 from django.views import View
 
-# Create your views here.
 
 
 class Index(View):
